@@ -1,0 +1,98 @@
+第一章
+1.1
+修改用户密码的命令
+mysqladmin -uroot -p旧密码 password(新密码)
+显示数据库命令
+show databases;
+使用数据的命令
+use mysql;
+SELECT命令
+显示当前连接的数据库
+select database();
+显示当前服务器版本
+select version();
+显示当前服务器时间
+select now();
+显示当前用户
+select user();
+1.2
+创建数据库
+create database db_name;
+create databese if not exists db_name character set utf8;
+修改数据库
+alter databases db_name;character set utf8;
+查看数据库的编码格式
+use db_name;
+show variables like 'chasracter%';
+删除数据库
+drop database id exists db_name;
+1.3数据类型
+整型(int):
+TINYINT  SMALINT  MEDIUINT INT BIGINT
+浮点数类型(进似值)和定点数类型(确定值)
+float(4个字节存储) double(8个字节存储)  decimal
+日期时间型和字符型
+year(YYYY) time(HH:MM:SS) date(YYYY-MM-DD)
+datetime(YYYY-MM-DD HH:MM:SS)  timestamp(YYYY-MM-DD HH:MM:SS)
+字符型
+char(0-255固定长度) varchar(0-65535)
+TINYTEXT()  TEXT() MEDIUMTEXT() LONGTEXT()
+ENUM(枚举值的个数)  set(取决于成员数目)
+1.4
+创建数据库表
+create table reader(
+card_id char(18),
+name varchar(10),
+sex enum('男','女'),枚举型
+age tinyint,
+tel char(11),
+balance decimal(7,3)
+);
+查看数据库表
+show tables from db_name;
+查看数据库表基本结构
+show columns from table_name;
+desc table_name;
+查看创建表的sql语句
+show create table table_name;
+1.5修改数据库表
+添加列
+alter table table_name add email carchar(20) first/after 列名;
+修改列
+alter table teble_name change <旧列名><新列名><新数据类型>
+alter table reader email2 email_bak varchar(30);
+修改列的数据类型
+alter tale teble_name modify <列名> <类型>;
+alter tale teble_name modify email varchar (25);
+修改列的排列位置
+alter table table_name modify <列1><数据类型> first/after <列2>;
+删除列
+alter table table_name drop <列名>;
+修改表名
+alter table <旧表名> rename to <新表名>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
