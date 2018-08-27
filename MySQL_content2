@@ -1,7 +1,78 @@
 第二章
-1.1
+2.1
 约束是一种对标的限制,通过对标的行或列的数据作出限制,来确保表的数据的完整性和唯一性
 约束类型:
 非空约束:not null  主键约束: primary key   唯一约束: unique
 默认约束: default  外键约束:foreign key
+2.2
+空值与非空
+null 字段可以为空
+not null 字段禁止为空
+语法规则 列名 数据类型 not null
+create table bookinfo(
+book_id int,
+book_name varchar(20) not null
+);
+通过修改表为指列表添加非空约束
+alter table bookinfo modify book_name varchar(20) not null
+
+create table bookinfo(
+book_id int,
+book_name varchar (20) not null
+)
+2.3
+主键约束:要求主键的数据唯一
+单子段主键:由一个字段组成
+列名 数据类型 primary key
+create table bookinfo(
+book_id int primary key,
+book_name varchar (20) not null
+);
+或者
+create table bookinfo(
+book_id int,
+book_name varchar (20) not null,
+constraint  pk_id primary key(book_id)
+);
+修改表为列添加主键:
+alter table bookinfo modify book_id int primary key;
+alter table bookinfo add primary key (book_id)
+修改表为列删除主键:
+alter table bookinfo drop primary key(book_id)
+2.4
+唯一约束:要求该列唯一,允许为空
+create table bookinfo(
+book_id int parimary key,
+book_name varchar (20) unique not null
+);
+删除唯一约束
+alter table bookinfo drop key uk_name
+
+2.5
+默认约束:指定某列的默认值
+create table bookinfo(
+book_id int primary key ,
+book_name varchar (20) default "上海出版社"
+)
+修改添加默认约束
+alter table bookinfo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
