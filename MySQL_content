@@ -20,12 +20,12 @@ select user();
 create database db_name;
 create databese if not exists db_name character set utf8;
 修改数据库
-alter databases db_name;character set utf8;
+alter databases db_name character set utf8;
 查看数据库的编码格式
 use db_name;
-show variables like 'chasracter%';
+show variables like 'character%';
 删除数据库
-drop database id exists db_name;
+drop database if exists db_name;
 1.3数据类型
 整型(int):
 TINYINT  SMALINT  MEDIUINT INT BIGINT
@@ -57,7 +57,7 @@ desc table_name;
 show create table table_name;
 1.5修改数据库表
 添加列
-alter table table_name add email carchar(20) first/after 列名;
+alter table table_name add email varchar(20) first/after 列名;
 修改列
 alter table teble_name change <旧列名><新列名><新数据类型>
 alter table reader email2 email_bak varchar(30);
