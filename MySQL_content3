@@ -17,3 +17,31 @@ ALTER table bookinfo add CONSTRAINT fk_bcid FOREIGN key(book_category_d)REFERENC
 3.3
 单表数据的更新(update .... set ...where ...)
 update table_name set <列值> where (条件)
+update bookinfo SET store= store-1 where book_id=20150201;
+3.4
+单表记录的删除
+delete from table_name  where <条件>
+删除表中所有记录
+delete from table_name
+删除表,并且重新创建表
+truncate table readinfo;
+3.5
+单表记录的查询
+查询所有列
+select * from table_name
+查询单个或多个列加条件
+select <列名>,<列名>.... from table_name where <列名>
+查询结果不重复(distinct)
+select distinct <列名> from table_name  where <列名>
+查询某列为空值
+select * from table_name where <列名> is null ;
+3.6
+分组查询
+创建分组:group by <列名> //通常和聚合函数一起使用,max(),min(),sum(),avg(),count()
+select count(*) from bookinfo where sex="男";
+
+having 过滤分组 //限定显示记录所需满足的条件
+SELECT sex FROM readinfo group BY sex HAVING count(sex)>2;
+
+
+

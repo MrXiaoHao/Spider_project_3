@@ -69,47 +69,6 @@ book_category_id int,
 constraint fk_cid foreign key(book_category_id) references bookcategory(category_id)
 );
 添加外键:
-alter table add bookinfo add foreign key(book_category_id) references bookcategory(category_id)
+alter table bookinfo add foreign key(book_category_id) references bookcategory(category_id)
 删除外键:
 alter table bookinfo drop foreign key fk_cid;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
