@@ -47,7 +47,6 @@ book_name varchar (20) unique not null
 );
 删除唯一约束
 alter table bookinfo drop key uk_name
-
 2.5
 默认约束:指定某列的默认值
 create table bookinfo(
@@ -56,6 +55,44 @@ book_name varchar (20) default "上海出版社"
 )
 修改添加默认约束
 alter table bookinfo
+2.6
+外键:用来两个表的数据之间的连接,保持数据的一致性和完整性
+foreign key <列名>
+create table bookcategory(
+category_id int primary key,
+category varchar(20),
+parent_id int
+);
+create table bookinfo(
+book_id int primary key,
+book_category_id int,
+constraint fk_cid foreign key(book_category_id) references bookcategory(category_id)
+);
+添加外键:
+alter table add bookinfo add foreign key(book_category_id) references bookcategory(category_id)
+删除外键:
+alter table bookinfo drop foreign key fk_cid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
