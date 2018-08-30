@@ -39,9 +39,64 @@ select * from table_name where <列名> is null ;
 分组查询
 创建分组:group by <列名> //通常和聚合函数一起使用,max(),min(),sum(),avg(),count()
 select count(*) from bookinfo where sex="男";
-
+select sex count(*) from readinfo group by sex;
 having 过滤分组 //限定显示记录所需满足的条件
 SELECT sex FROM readinfo group BY sex HAVING count(sex)>2;
+
+3.7
+查询结果排序
+asc代表升序,desc代表降序
+order by  <列名> [asc/desc]
+单列排序
+select  *from  bookinfo order by price;
+多列排序
+select *from bookinfo order by  pricce,store;
+select *from bookinfo order by price desc ;
+3.8
+limit语句限制查询记录的操作
+limit [位置偏移量,] 行数
+select *from bookinfo;
+显示前三行记录
+select *from bookinfo limit 3;
+显示第三条记录开始的2条记录
+select * from bookinfo limit 2,2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
